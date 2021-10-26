@@ -2,6 +2,14 @@ public class FileStaticImgSave extends FileStaticImg{
     private int height;
     private int width;
 
+    public FileStaticImgSave (String name, String nameFormat, int size, int height, int width) {
+        setName(name);
+        setNameFormat(nameFormat);
+        setSize(size);
+        setHeight(height);
+        setWidth(width);
+    }
+
     public void setHeight(int height) {
         try {
             if (height <= 0)

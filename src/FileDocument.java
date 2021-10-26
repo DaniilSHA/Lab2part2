@@ -2,6 +2,13 @@ public class FileDocument extends FileGeneralInfo{
     private String nameFormat;
     private int pages;
 
+    public FileDocument (String name, String nameFormat, int size, int pages) {
+        setName(name);
+        setNameFormat(nameFormat);
+        setSize(size);
+        setPages(pages);
+    }
+
     public void setNameFormat (String nameFormat) {
         try {
             if (nameFormat.equals("")) throw new IncorrectInputNameException("нельзя вводить пустую строчку");
@@ -31,7 +38,7 @@ public class FileDocument extends FileGeneralInfo{
 
     @Override
     public String printDetails() {
-        return getNameFormat() + ", " + getPages() + "pages";
+        return getNameFormat() + ", " + getPages() + " pages";
     }
 
 }

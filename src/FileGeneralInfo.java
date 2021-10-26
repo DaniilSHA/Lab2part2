@@ -33,16 +33,16 @@ public abstract class FileGeneralInfo {
 
     public abstract String printDetails();
 
-    public static void printAll(FileDocument[] file, int count){
+    public static void printAll(FileGeneralInfo[] file, int count){
         String[][] array = new String[count][3];
         array[0][0] = "File name |";
         array[0][1] = " Size |";
         array[0][2] = " Details";
 
         for (int i = 1; i< array.length; i++) {
-            array[i][0] = "|" + file[i-1].getName() + "." + file[i-1].getNameFormat() + "|";
-            array[i][1] = "|" + file[i-1].getSize() + "|";
-            array[i][2] = "|" + file[i-1].printDetails() + "|";;
+            array[i][0] = "|" + file[i-1].getName();
+            array[i][1] = "|" + file[i-1].getSize();
+            array[i][2] = "|" + file[i-1].printDetails();
         }
 
         for (int i = 0; i< array.length; i++) {

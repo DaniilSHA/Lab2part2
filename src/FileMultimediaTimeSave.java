@@ -1,6 +1,14 @@
 public class FileMultimediaTimeSave extends FileMultimedia{
     private int timeOf;
 
+    public FileMultimediaTimeSave (String name, String nameFormat, int size, String content, int timeOf) {
+        setName(name);
+        setNameFormat(nameFormat);
+        setSize(size);
+        setNameContent(content);
+        setTimeOf(timeOf);
+    }
+
     public void setTimeOf(int timeOf) {
         try {
             if (timeOf <= 0)
@@ -20,7 +28,7 @@ public class FileMultimediaTimeSave extends FileMultimedia{
     }
 
     public int getMinutes () {
-        return (int) (getTimeOf()-(getHours()*60*60)/60);
+        return (int) (getTimeOf()-(double)((getHours()*60*60)))/60;
     }
 
     public int getSeconds () {
@@ -29,6 +37,16 @@ public class FileMultimediaTimeSave extends FileMultimedia{
 
     @Override
     public String printTimeCodeAndImgSize(){
-        return getHours() + ":" + getMinutes() + ":" + getSeconds();
+        String h, m, s;
+        if (getHours()<10) h = "0" + getHours();
+        else h = Integer.toString(getHours());
+
+        if (getMinutes()<10) m = "0" + getMinutes();
+        else m = Integer.toString(getMinutes());
+
+        if (getSeconds()<10) s = "0" + getSeconds();
+        else s = Integer.toString(getSeconds());
+
+        return h + ":" + m + ":" + s;
     }
 }
