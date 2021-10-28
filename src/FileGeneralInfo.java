@@ -6,7 +6,7 @@ public abstract class FileGeneralInfo {
 
     public void setName(String name) {
         try {
-            if (name.equals("")) throw new IncorrectInputNameException("нельзя вводить пустую строчку");
+            if (name.trim().equals("")) throw new IncorrectInputNameException("нельзя вводить пустую строчку");
             this.name = name;
         } catch (IncorrectInputNameException e) {
             System.out.println("Ошибка в том, что " + e.getMessage());

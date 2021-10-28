@@ -11,7 +11,7 @@ public class FileDocument extends FileGeneralInfo{
 
     public void setNameFormat (String nameFormat) {
         try {
-            if (nameFormat.equals("")) throw new IncorrectInputNameException("нельзя вводить пустую строчку");
+            if (nameFormat.trim().equals("")) throw new IncorrectInputNameException("нельзя вводить пустую строчку");
             this.nameFormat = nameFormat;
         } catch (IncorrectInputNameException e) {
             System.out.println("Ошибка в том, что " + e.getMessage());
