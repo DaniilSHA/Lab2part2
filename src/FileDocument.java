@@ -37,9 +37,8 @@ public class FileDocument extends FileGeneralInfo{
     }
 
     @Override
-    public String printDetails() {
+    public String toString () {
         return getNameFormat() + ", " + getPages() + " pages";
     }
-
 }
 

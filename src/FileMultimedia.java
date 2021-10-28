@@ -31,7 +31,7 @@ public abstract class FileMultimedia extends FileGeneralInfo{
     public abstract String printTimeCodeAndImgSize();
 
     @Override
-    public String printDetails() {
+    public String toString() {
         return getNameFormat() + ", " + getNameContent() + ", " + printTimeCodeAndImgSize();
     }
 }

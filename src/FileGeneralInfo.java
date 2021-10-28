@@ -31,7 +31,7 @@ public abstract class FileGeneralInfo {
         return size;
     }
 
-    public abstract String printDetails();
+//    public abstract String printDetails();
 
     public static void printAll(FileGeneralInfo[] file, int count){
         String[][] array = new String[count][5];
@@ -42,16 +42,16 @@ public abstract class FileGeneralInfo {
         array[0][4] = " Details";
 
 
-        for (int i = 1; i< array.length; i++) {
-            array[i][0] = file[i-1].getName();
+        for (int i = 2; i< array.length; i++) {
+            array[i][0] = file[i-2].getName();
             array[i][1] = "|";
-            array[i][2] = Integer.toString(file[i-1].getSize());
+            array[i][2] = Integer.toString(file[i-2].getSize());
             array[i][3] = "|";
-            array[i][4] = file[i-1].printDetails();
+            array[i][4] = file[i-2].toString();
         }
 
-        int indexMaxName = array[1][0].length();
-        for (int i = 1; i< array.length; i++) {
+        int indexMaxName = array[2][0].length();
+        for (int i = 2; i< array.length; i++) {
             if (indexMaxName < array[i][0].length()) indexMaxName = array[i][0].length();
         }
 
@@ -61,7 +61,7 @@ public abstract class FileGeneralInfo {
         for (int j=array[0][0].length(); j<indexMaxName; j++)
         array[0][0] += " ";
 
-        for (int i = 1; i< array.length; i++) {
+        for (int i = 2; i< array.length; i++) {
             if (array[i][0].length() < indexMaxName)
             {
                 for (int j=array[i][0].length(); j<indexMaxName; j++) {
@@ -70,12 +70,12 @@ public abstract class FileGeneralInfo {
             }
         }
 
-        int indexMaxSize = array[1][2].length();
-        for (int i = 1; i< array.length; i++) {
+        int indexMaxSize = array[2][2].length();
+        for (int i = 2; i< array.length; i++) {
             if (indexMaxSize < array[i][2].length()) indexMaxSize = array[i][2].length();
         }
 
-        for (int i = 1; i< array.length; i++) {
+        for (int i = 2; i< array.length; i++) {
             if (array[i][2].length() < indexMaxSize)
             {
                 int lengthOfArraySecoundColumn = array[i][2].length();
@@ -90,6 +90,20 @@ public abstract class FileGeneralInfo {
 
         for (int j=array[0][2].length(); j<indexMaxSize; j++)
             array[0][2] += " ";
+
+        array[1][0] = "-";
+        array[1][2] = "-";
+        array[1][4] = "-";
+
+        for (int i = 1; i<indexMaxName; i++)
+        array[1][0] += "-";
+        array[1][1] = "+";
+        for (int i = 1; i<indexMaxSize; i++)
+        array[1][2] += "-";
+        array[1][3] = "+";
+        for (int i = 1; i<array[0][4].length()+1; i++)
+        array[1][4] += "-";
+
 
         for (int i = 0; i< array.length; i++) {
             for (int j=0; j<5; j++) {

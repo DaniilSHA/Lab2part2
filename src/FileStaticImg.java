@@ -17,7 +17,7 @@ public abstract class FileStaticImg extends FileGeneralInfo{
     public abstract String printImgSize ();
 
     @Override
-    public String printDetails() {
+    public String toString() {
         return getNameFormat() + ", " + printImgSize();
     }
 

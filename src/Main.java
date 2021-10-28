@@ -9,11 +9,11 @@ public class Main {
             new FileVideo("BackToTheFuture1.avi", "video", 1470984192, "Back to the future I, 1985", 6488, 640, 325)
         };
 
-        FileGeneralInfo.printAll(array, array.length+1);
+        FileGeneralInfo.printAll(array, array.length+2);
 
         System.out.println();
 
-        FileGeneralInfo[] arrayChild = new FileGeneralInfo []{
+        FileVideo[] arrayChild = new FileVideo []{
                 new FileVideo("BackToTheFuture1.avi", "video", 1470984192, "Back to the future I, 1985", 6488, 640, 325),
                 new FileVideo("BackToTheFuture1.avi", "video", 1470984192, "Back to the future I, 1985", 6488, 640, 325),
                 new FileVideo("BackToTheFuture1.avi", "video", 1470984192, "Back to the future I, 1985", 6488, 640, 325),
@@ -22,12 +22,9 @@ public class Main {
                 new FileVideo("BackToTheFuture1.avi", "video", 1470984192, "Back to the future I, 1985", 6488, 640, 325),
         };
 
-        FileGeneralInfo.printAll(arrayChild, arrayChild.length+1);
+        FileGeneralInfo.printAll(arrayChild, arrayChild.length+2);
 
-//        Если я правильно понял, этот метод подходит для массива из объектов дочерних типов, потому что
-//        во всех дочерних класссах, во-первых, всегда содержаться поля "имя файла" и " размер", а, во-вторых,
-//        я реализовал в каждом дочерним классе метод printDetails (с помощью @Override) таким образом, чтобы
-//        он выводил информацию по типу файла согласно задания. Таким образом, я могу использовать данный метод
-//        для любого класса (типа файла) ведь у меня есть реализация на все возможные дочернии классы.
+//        Метод printAll напечатал мне массив дочернего типа, потому что дочерний тип унаследовал данный метод у своего
+//        родителя.
     }
 }

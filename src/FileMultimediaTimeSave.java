@@ -47,6 +47,8 @@ public class FileMultimediaTimeSave extends FileMultimedia{
         if (getSeconds()<10) s = "0" + getSeconds();
         else s = Integer.toString(getSeconds());
 
-        return h + ":" + m + ":" + s;
+        if (getHours()==0) return m + ":" + s;
+        else if (getMinutes()==0) return s;
+        else return h + ":" + m + ":" + s;
     }
 }

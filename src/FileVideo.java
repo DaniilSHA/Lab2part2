@@ -49,7 +49,9 @@ public class FileVideo extends FileMultimediaTimeSave{
         if (getSeconds()<10) s = "0" + getSeconds();
         else s = Integer.toString(getSeconds());
 
-        return h + ":" + m + ":" + s + ", " + getHeight() + "x" + getWidth();
+        if (getHours()==0) return m + ":" + s + ", " + getHeight() + "x" + getWidth();
+        else if (getMinutes()==0) return s + ", " + getHeight() + "x" + getWidth();
+        else return h + ":" + m + ":" + s + ", " + getHeight() + "x" + getWidth();
     }
 
 }
